@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public int hitPoints = 5;
     public float moveSpeed;
     public GameObject bulletPrefab;
+    public Text hpText;
+
     private Transform bulletSpawnerLocation;
 
 
@@ -14,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         bulletSpawnerLocation = transform.Find("BulletSpawner");
+        hpText.text = "HP: " + hitPoints;
     }
 
     // Update is called once per frame
@@ -48,7 +53,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("enemy") || collision.CompareTag("bullet enemy"))
         {
-            Destroy(gameObject);
+            hitPoints--;
+            hpText.text = "HP: " + hitPoints;
+            if (hitPoints <= 0)
+            {
+                hpText.text = "You dead bro";
+                Destroy(gameObject);
+            }
         }
     }
 }

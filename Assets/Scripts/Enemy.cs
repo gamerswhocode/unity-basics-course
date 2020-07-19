@@ -56,7 +56,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("bullet"))
         {
-            Destroy(gameObject);
+            Score.Instance.ScoreInt = 20;
+            Destroy(gameObject);            
         }
     }
 }
