@@ -3,6 +3,8 @@
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public GameObject bulletPrefab;
+    private Transform bulletSpawnerLocation;
 
 
     private Animator anim;
@@ -11,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        bulletSpawnerLocation = transform.Find("BulletSpawner");
     }
 
     // Update is called once per frame
@@ -33,6 +36,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             anim.SetTrigger("rotate");
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            var bullet = Instantiate(bulletPrefab, bulletSpawnerLocation.position, Quaternion.identity);
         }
     }
 }
