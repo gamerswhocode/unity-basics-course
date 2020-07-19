@@ -43,4 +43,12 @@ public class PlayerController : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, bulletSpawnerLocation.position, Quaternion.identity);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

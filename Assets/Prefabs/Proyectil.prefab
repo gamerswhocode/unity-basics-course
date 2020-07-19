@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7000301314334533292}
   m_Layer: 0
   m_Name: Proyectil
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e05d01e056ae994a89b564ea3a40ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0.1
