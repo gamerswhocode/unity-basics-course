@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float fireCooldown = 2f;
     public GameObject bulletPrefab;
     private Transform bulletSpawnerLocation;
 
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         bulletSpawnerLocation = transform.Find("BulletSpawner");
+        InvokeRepeating("Shoot", 1f, fireCooldown);
     }
 
     // Update is called once per frame

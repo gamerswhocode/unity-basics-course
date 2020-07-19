@@ -1,20 +1,20 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
-    public float moveSpeed = 10f;
+    public float moveSpeed = 0.1f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * moveSpeed);
+        transform.Translate(Vector3.down * moveSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("enemy"))
+        if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
