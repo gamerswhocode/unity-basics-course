@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float moveSpeed = 10f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Vector3.up * moveSpeed);
     }
