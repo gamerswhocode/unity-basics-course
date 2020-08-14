@@ -3,8 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    public GameObject bulletprefacb;
-    public Transform BulletSpawnerLocation;
+
 
     private Animator anim;
 
@@ -35,10 +34,5 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("rotate");
         }
-
-      //  if (Input.GetKeyDown(KeyCode.Z))
-      //  {
-      //      Instantiate(bulletprefacb, BulletSpawnerLocation.position, Quaternion.identity);
-      //  }
     }
 }
