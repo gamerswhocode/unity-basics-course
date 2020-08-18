@@ -6,8 +6,13 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletprefacb;
     public Transform BulletSpawnerLocation;
 
-    
-    
+    private Animator anim;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,11 +31,14 @@ public class PlayerController : MonoBehaviour
             transform.Translate(0, moveY, 0);
         }
 
-        
-
-     if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            Instantiate(bulletprefacb, BulletSpawnerLocation.position, Quaternion.identity);
+            anim.SetTrigger("rotate");
         }
+
+      //  if (Input.GetKeyDown(KeyCode.Z))
+      //  {
+      //      Instantiate(bulletprefacb, BulletSpawnerLocation.position, Quaternion.identity);
+      //  }
     }
 }
